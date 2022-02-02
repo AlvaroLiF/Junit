@@ -41,7 +41,7 @@ public class TestShoppingCart {
 	@Test
 	public void TestAñadirProducto() {
 		carro.addItem(producto);
-		assertEquals(2,carro.getItemCount());
+		assertEquals(1,carro.getItemCount());
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ public class TestShoppingCart {
 	public void TestEliminarProducto() throws ProductNotFoundException {
 		carro.addItem(producto);
 		carro.removeItem(producto);
-		assertEquals(2,carro.getItemCount());
+		assertEquals(0,carro.getItemCount());
 	}
 	
 	
