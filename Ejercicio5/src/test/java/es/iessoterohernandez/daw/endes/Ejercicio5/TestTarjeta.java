@@ -1,19 +1,16 @@
 package es.iessoterohernandez.daw.endes.Ejercicio5;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.assertEquals;
 
-public abstract class TestTarjeta extends TestCase 
+import org.junit.jupiter.api.Test;
+
+public abstract class TestTarjeta
 {
-	public TestTarjeta(String sTestName)
-	{
-		super(sTestName);
-	}
 	
 	public abstract Tarjeta getTarjetaObtenida();
 	public abstract Tarjeta prepararTarjetaEsperada();
 	
+	@Test
 	public void testRetirar1000() 
 	{
 		try 

@@ -1,21 +1,21 @@
 package es.iessoterohernandez.daw.endes.Ejercicio5;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Date;
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 
-public class TestCredito extends TestCase 
+
+public class TestCredito 
 {
 	Cuenta cuenta;
 	Credito tarjeta;
 
-	public TestCredito(String sTestName)
-	{
-		super(sTestName);
-	}
-
+	@BeforeAll
 	public void setUp() throws Exception
 	{
 		cuenta=new Cuenta("0001.0002.12.1234567890", "Fulano de Tal");
@@ -27,10 +27,12 @@ public class TestCredito extends TestCase
 		tarjeta.setCuenta(cuenta);	
 	}
 
+	@AfterAll
 	public void tearDown() throws Exception
 	{
 	}
 
+	@Test
 	public void testIngresar500()
 	{
 		try
@@ -48,6 +50,7 @@ public class TestCredito extends TestCase
 		}
 	}
 
+	@Test
 	public void testRetirar300()
 	{
 	try
@@ -65,6 +68,7 @@ public class TestCredito extends TestCase
 		}	
 	}
 	
+	@Test
 	public void testLiquidar() 
 	{
 		try
@@ -80,9 +84,5 @@ public class TestCredito extends TestCase
 			
 		}
 	}
-
-	public static void main(String args[]) 
-	{
-		junit.swingui.TestRunner.run(TestCredito.class);
-	}	
+	
 }
